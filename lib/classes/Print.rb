@@ -4,6 +4,7 @@ require 'colorize'
 class Print
 
   def self.print_pokemon_expanded(hash)
+    system 'clear'
     puts "-" * 40
     puts "#{hash[:name]}"
     puts "-" * 40
@@ -27,6 +28,7 @@ class Print
   end
 
   def self.print_pokemon_condensed(hash)
+    system 'clear'
     name = "#{hash[:name]}"
     case hash[:type_1]
       when "Normal"

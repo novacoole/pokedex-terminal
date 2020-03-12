@@ -1,8 +1,0 @@
-rsfsdfsequire 'smarter_csv'
-require 'colorize'
-require_relative 'classes/Main_menu'
-
-fork{exec "artii 'Michael' --font larry3d | lolcat -a -d 15"}
-sleep(10)
-
-Main_menu.run

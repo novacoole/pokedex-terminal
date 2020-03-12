@@ -1,5 +1,5 @@
 require "bundler/setup"
-require "pokedex/terminal"
+require "/terminal"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure

@@ -5,15 +5,17 @@ require_relative './List'
 require_relative './Delete'
 require 'tty-prompt'
 require 'smarter_csv'
+require 'artii'
+require 'lolize'
 
 class Main_menu
 @@pokemon_data = SmarterCSV.process('../../data/pokemon.csv')
 
   def self.run
     while true
+      fork{exec "artii './titlesequence.plaintext' --font larry3d | lolcat"}
       main_menu_prompt = TTY::Prompt.new(active_color: :red)
       puts "-" * 40
-      # main_menu_prompt.warn("        Welcome to your Pokedex!")
       puts "        Welcome to your Pokedex!        ".blue.on_red.blink
       puts "-" * 40
       user_input = main_menu_prompt.select("Please select from the following:") do |menu|
@@ -27,6 +29,7 @@ class Main_menu
       end
       case user_input
         when 1
+
           List.list_menu(@@pokemon_data)
         when 2
           name = Search.by_name(@@pokemon_data)

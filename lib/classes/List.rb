@@ -4,6 +4,7 @@ class List
   
   def self.list_menu(data)
     while true
+      system 'clear'
       list_prompt = TTY::Prompt.new(active_color: :red)
       user_input = list_prompt.select("How would you like to list the Pokemon?\nPlease enter one of the following options.") do |menu|
       menu.choice "List all", 1

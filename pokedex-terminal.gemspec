@@ -1,4 +1,4 @@
-require_relative 'lib/pokedex/terminal/version'
+require_relative 'lib/terminal/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "pokedex-terminal"
@@ -11,7 +11,8 @@ Gem::Specification.new do |spec|
   spec.homepage      = "https://rubygems.org/gems/pokedex-terminal"
   spec.license       = "GPL-3.0-or-later"
   spec.required_ruby_version = Gem::Requirement.new(">= 2.3.0")
-
+  spec.executables   = ["pokedex-terminal"]
+  spec.require_paths = ["lib"]
   # spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
 
   # spec.metadata["homepage_uri"] = spec.homepage
@@ -23,8 +24,7 @@ Gem::Specification.new do |spec|
   spec.files         = Dir.chdir(File.expand_path('..', __FILE__)) do
     `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
   end
-  spec.bindir        = "exe"
-  spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
+  spec.executables   = ["pokedex-terminal"]
   spec.require_paths = ["lib"]
   spec.add_development_dependency 'colorize', '~> 0.8.1'
   spec.add_development_dependency 'smarter_csv', '~> 1.1', '>= 1.1.4'

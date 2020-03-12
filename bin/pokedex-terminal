@@ -1,5 +1,3 @@
 #!/usr/bin/env ruby
 
-require "pokedex/terminal"
-
-Main_menu.run
+require_relative "../lib/pokedex-terminal"
