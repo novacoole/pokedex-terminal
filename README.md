@@ -1,8 +1,10 @@
 # Pokedex::Terminal
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/pokedex/terminal`. To experiment with that code, run `bin/console` for an interactive prompt.
+This terminal application seeks to emulate the basic functionality of the fictional ‘Pokedex’ device from within the Pokemon universe; a digital encyclopaedia of all existing Pokemon, their ‘Types’ and their attributes.
 
-TODO: Delete this and the text above, and describe your gem
+While several Pokedex applications exist, pokedex-terminal seeks to run with minimal computational resources as to allow access to the widest audience possible, particuarly those using outdated devices.
+
+pokedex-terminal also allows offline access to Pokemon attributes and descriptions for usage in situations where there is no internet access, or if Pokemon-related online content has been blocked/censored under oppressive regimes.
 
 ## Installation
 
@@ -19,6 +21,60 @@ And then execute:
 Or install it yourself as:
 
     $ gem install pokedex-terminal
+
+## Features
+
+This application allows the user to do the following:
+
+### List
+
+When the user selects "List Pokemon" from the main menu, the list_menu method of the List class is called. This method contains a menu system derived from 'tty-prompt' gem. This menu offers several options:
+
+1. "List all"
+
+    To List all pokemon, the .list_all method of the List class is called. This method takes an input of data (@@pokemon_data). Then, a .each loop to iterate through the @@pokemon_data object (which contains hashes for each Pokemon). For each hash, the .print_pokemon_condensed method of the Print class is called with that hash an input. This method prints only the ':name' value of that hash.
+
+2. "List by Type"
+
+    To list Pokemon by type, firstly the .add_type method belonging to the New class is called. This presents the user with a 'tty-prompt' .select menu which allows them to select a Pokemon Type. The user choice is returned and stored in the 'user_input' variable.
+    
+    Then the .list_by method of the List class is called. This method takes an input of data (@@pokemon_data), the hash key we want to filter within (:type_1), and the exact value we want to filter (user_input).
+
+    This method uses a .each method to iterate through  each hash the @@pokemon_data object, if a hash's ':type_1' value matches user_input, the .print_pokemon_condensed method of the Print class is called with that hash an input. This method prints only the ':name' value of that hash.
+
+3. "List by Secondary Type"
+
+     To list Pokemon by type, firstly the .add_type method belonging to the New class is called. This presents the user with a 'tty-prompt' .select menu which allows them to select a Pokemon Secondary Type. The user choice is returned and stored in the 'user_input' variable.
+    
+    Then the .list_by method of the List class is called. This method takes an input of data (@@pokemon_data), the hash key we want to filter within (:type_2), and the exact value we want to filter (user_input).
+
+    This method uses a .each method to iterate through  each hash the @@pokemon_data object, if a hash's ':type_2' value matches user_input, the .print_pokemon_condensed method of the Print class is called with that hash an input. This method prints only the ':name' value of that hash.
+
+4. "List by Generation"
+
+    To list Pokemon by generation, firstly a 'tty-prompt' ..ask method is used to prompt the user for a number between 1-8. This input is returned and stored in a variable called 'user_input.
+
+    Then the .list_by method of the List class is called. This method takes an input of data (@@pokemon_data), the hash key we want to filter within (:generation), and the exact value we want to filter (user_input converted to an integer).
+
+    This method uses a .each method to iterate through  each hash the @@pokemon_data object, if a hash's ':generation' value matches user_input, the .print_pokemon_condensed method of the Print class is called with that hash an input. This method prints only the ':name' value of that hash.
+
+
+5. "List Legendary Pokemon"
+
+    To list Pokemon by generation, the .list_by method of the List class is called. This method takes an input of data (@@pokemon_data), the hash key we want to filter within (:legendary), and the exact value we want to filter ('True').
+
+    This method uses a .each method to iterate through  each hash the @@pokemon_data object, if a hash's ':generation' value matches 'True', the .print_pokemon_condensed method of the Print class is called with that hash an input. This method prints only the ':name' value of that hash.
+
+----
+
+### Search
+
+
+### Search
+Search for individual Pokemon.
+3. Update or change the attributes of any Pokemon in the Pokedex.
+4. Add an entirely new Pokemon to the Pokedex.
+5. Delete a Pokemon from the Pokedex.
 
 ## Usage
 
@@ -37,7 +93,7 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/[USERN
 
 ## License
 
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+The gem is available as open source under the terms of the [GPL-3.0 License](https://opensource.org/licenses/GPL-3.0).
 
 ## Code of Conduct
 

@@ -4,8 +4,7 @@ require_relative './New'
 require_relative './List'
 require_relative './Delete'
 require 'tty-prompt'
-# require 'colorize'
-require 'lolize'
+require 'smarter_csv'
 
 class Main_menu
 @@pokemon_data = SmarterCSV.process('../../data/pokemon.csv')

@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require "pokedex/terminal"
+
+Main_menu.run

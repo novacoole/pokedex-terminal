@@ -30,17 +30,23 @@ class Print
     name = "#{hash[:name]}"
     case hash[:type_1]
       when "Normal"
-        name.brown
+        puts name
       when "Fire"
-        name.red
+        puts name.colorize(:red)
       when "Water" 	
-        name.blue
+        puts name.colorize(:blue)
       when "Grass"
-      when "Electric" 	
+        puts name.colorize(:green)
+      when "Electric"
+        puts name.colorize(:light_blue)
       when "Ice"
-      when "Fighting" 	
+        puts name.colorize(:grey)
+      when "Fighting" 
+        puts name.colorize(:yellow)	
       when "Poison"
+        puts name.colorize(:purple)
       when "Ground"
+        puts name.colorize(:brown)
       when "Flying"
       when "Psychic"
       when "Bug"
