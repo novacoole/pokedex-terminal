@@ -62,6 +62,7 @@ class Update
           when 12
             Main_menu.run
         end
+        hash[:hp] = hash[:hp] + hash[:attack] + hash[:defense] + hash[:"sp._atk"] + hash[:"sp._def"] + hash[:speed]
       end
     end
   end

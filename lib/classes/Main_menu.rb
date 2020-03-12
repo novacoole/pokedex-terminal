@@ -9,7 +9,7 @@ require 'artii'
 require 'lolize'
 
 class Main_menu
-@@pokemon_data = SmarterCSV.process('../../data/pokemon.csv')
+@@pokemon_data = SmarterCSV.process("../../data/pokemon.csv") # Creates an array of hashes from the CSV file with keys taken from CSV headers.
 
   def self.run
     while true
@@ -24,12 +24,11 @@ class Main_menu
       menu.choice 'Update an existing Pokemon', 3
       menu.choice 'Add a new Pokemon', 4
       menu.choice 'Delete a Pokemon', 5 
-      menu.choice 'Exit', 6
+      menu.choice 'Exit and save changes', 6
       menu.choice 'Print hashes', 7
       end
       case user_input
         when 1
-
           List.list_menu(@@pokemon_data)
         when 2
           name = Search.by_name(@@pokemon_data)
@@ -45,14 +44,19 @@ class Main_menu
         when 5
           @@pokemon_data = Delete.delete(@@pokemon_data)
         when 6
-          CSV.open('../../data/pokemon.csv', "wb") do |csv|
-            keys = @@pokemon_data.first.keys
-            csv << keys
-            @@pokemon_data.each do |hash|
-              csv << hash.values_at(*keys)
+          save_changes = main_menu_prompt.ask?('Are you sure you want to save your changes?')
+          if save_changes == true
+            CSV.open('../../data/pokemon.csv', "wb") do |csv|
+              keys = @@pokemon_data.first.keys
+              csv << keys
+              @@pokemon_data.each do |hash|
+                csv << hash.values_at(*keys)
+              end
             end
+            exit
+          else 
+            exit
           end
-          exit
         when 7
           pp @@pokemon_data
         else

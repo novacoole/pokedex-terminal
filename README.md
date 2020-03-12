@@ -14,7 +14,9 @@ $ gem install pokedex-terminal
 
 ## Usage
 
-TODO: Write usage instructions here
+```
+$ pokemon-terminal
+```
 
 ## Features
 
@@ -38,7 +40,7 @@ When the user selects "List Pokemon" from the main menu, the list_menu method of
 
 3. "List by Secondary Type"
 
-     To list Pokemon by type, firstly the .add_type method belonging to the New class is called. This presents the user with a 'tty-prompt' .select menu which allows them to select a Pokemon Secondary Type. The user choice is returned and stored in the 'user_input' variable.
+    To list Pokemon by type, firstly the .add_type method belonging to the New class is called. This presents the user with a 'tty-prompt' .select menu which allows them to select a Pokemon Secondary Type. The user choice is returned and stored in the 'user_input' variable.
     
     Then the .list_by method of the List class is called. This method takes an input of data (@@pokemon_data), the hash key we want to filter within (:type_2), and the exact value we want to filter (user_input).
 
