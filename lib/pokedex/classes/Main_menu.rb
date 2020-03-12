@@ -37,11 +37,18 @@ class Main_menu
           ## Incomplete
         when 4
           new_hash = New.add_pokemon
-          Print.print_pokemon_expanded(new_hash)
           @@pokemon_data << new_hash
+          Print.print_pokemon_expanded(new_hash)
         when 5
           @@pokemon_data = Delete.delete(@@pokemon_data)
         when 6
+          CSV.open('../../data/pokemon.csv', "wb") do |csv|
+            keys = @@pokemon_data.first.keys
+            csv << keys
+            @@pokemon_data.each do |hash|
+              csv << hash.values_at(*keys)
+            end
+          end
           exit
         when 7
           pp @@pokemon_data

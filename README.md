@@ -8,19 +8,13 @@ pokedex-terminal also allows offline access to Pokemon attributes and descriptio
 
 ## Installation
 
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'pokedex-terminal'
 ```
+$ gem install pokedex-terminal
+```    
 
-And then execute:
+## Usage
 
-    $ bundle install
-
-Or install it yourself as:
-
-    $ gem install pokedex-terminal
+TODO: Write usage instructions here
 
 ## Features
 
@@ -66,19 +60,6 @@ When the user selects "List Pokemon" from the main menu, the list_menu method of
     This method uses a .each method to iterate through  each hash the @@pokemon_data object, if a hash's ':generation' value matches 'True', the .print_pokemon_condensed method of the Print class is called with that hash an input. This method prints only the ':name' value of that hash.
 
 ----
-
-### Search
-
-
-### Search
-Search for individual Pokemon.
-3. Update or change the attributes of any Pokemon in the Pokedex.
-4. Add an entirely new Pokemon to the Pokedex.
-5. Delete a Pokemon from the Pokedex.
-
-## Usage
-
-TODO: Write usage instructions here
 
 ## Development
 
