@@ -7,8 +7,6 @@ require_relative './List'
 require_relative './Delete'
 require 'tty-prompt'
 require 'smarter_csv'
-require 'artii'
-require 'lolize'
 
 class Main_menu
   # Creates an array of hashes from the CSV file with keys taken from CSV headers.
