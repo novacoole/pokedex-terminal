@@ -1,16 +1,16 @@
+# frozen_string_literal: true
+
 require_relative './Main_menu'
 require 'colorize'
 
 class Print
-
   def self.print_pokemon_expanded(hash)
-    system 'clear'
-    puts "-" * 40
-    puts "#{hash[:name]}"
-    puts "-" * 40
-    print "#{hash[:name]} belongs to the #{hash[:type_1]} type"
-    if hash[:type_2] != nil
-      print ", with a secondary type of #{hash[:type_2]} \n"
+    puts '-' * 40
+    puts (hash[:name]).to_s
+    puts '-' * 40
+    print "#{hash[:name]} belongs to the #{colorize_attribute(hash, :type_1, :type_1)} type"
+    if !hash[:type_2].nil?
+      print ", with a secondary type of #{colorize_attribute(hash, :type_2, :type_2)} \n"
     else
       print ".\n"
     end
@@ -23,42 +23,56 @@ class Print
     if hash[:legendary] == 'True'
       puts "Most importantly, #{hash[:name]} is a legendary Pokemon!"
     end
-    puts "-" * 40
+    puts '-' * 40
     Main_menu.return?
   end
 
   def self.print_pokemon_condensed(hash)
-    system 'clear'
-    name = "#{hash[:name]}"
-    case hash[:type_1]
-      when "Normal"
-        puts name
-      when "Fire"
-        puts name.colorize(:red)
-      when "Water" 	
-        puts name.colorize(:blue)
-      when "Grass"
-        puts name.colorize(:green)
-      when "Electric"
-        puts name.colorize(:light_blue)
-      when "Ice"
-        puts name.colorize(:grey)
-      when "Fighting" 
-        puts name.colorize(:yellow)	
-      when "Poison"
-        puts name.colorize(:purple)
-      when "Ground"
-        puts name.colorize(:brown)
-      when "Flying"
-      when "Psychic"
-      when "Bug"
-      when "Rock"
-      when "Ghost"
-      when "Dark" 	
-      when "Dragon"
-      when "Steel" 	
-      when "Fairy"
-    end
+    puts colorize_attribute(hash, :name, :type_1)
   end
 
+  def self.colorize_attribute(hash, key, type)
+    attribute = ''
+    hash.each do |k, v|
+      attribute = v if k == key
+    end
+    case hash[type]
+    when 'Normal'
+      attribute
+    when 'Fire'
+      attribute.colorize(:red)
+    when 'Water'
+      attribute.colorize(:blue)
+    when 'Grass'
+      attribute.colorize(:green)
+    when 'Electric'
+      attribute.colorize(:light_blue)
+    when 'Ice'
+      attribute.colorize(:default)
+    when 'Fighting'
+      attribute.colorize(:light_red)
+    when 'Poison'
+      attribute.colorize(:cyan)
+    when 'Ground'
+      attribute.colorize(:default)
+    when 'Flying'
+      attribute.colorize(:light_white)
+    when 'Psychic'
+      attribute.colorize(:light_magenta)
+    when 'Bug'
+      attribute.colorize(:light_green)
+    when 'Rock'
+      attribute.colorize(:white)
+    when 'Ghost'
+      attribute.colorize(:light_black)
+    when 'Dark'
+      attribute.colorize(:black)
+    when 'Dragon'
+      attribute.colorize(:light_yellow)
+    when 'Steel'
+      attribute.colorize(:light_cyan)
+    when 'Fairy'
+      attribute.colorize(:magenta)
+    end
+  end
 end
