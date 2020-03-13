@@ -21,20 +21,33 @@ I used manual testing to test my app. You can find a spreadsheet that documents 
 ---
 
 ## Installation
-
-You will need ruby installed to use this application. 
-Once you have, run the command below from terminal.
-```
-$ gem install pokedex-terminal
-```    
-#### Dependencies
-
+#### Gem Dependencies
 * [artii](https://github.com/miketierney/artii)
 * [colorize](https://github.com/fazibear/colorize)
 * [lolcat](https://github.com/busyloop/lolcat/)
 * [smarter_csv](https://github.com/tilo/smarter_csv)
 * [tty-prompt](https://github.com/piotrmurach/tty-prompt#32-active_color)
 
+The above dependencies should automatically install with the    gem install command below, but you will have to manually install [mpg123](https://github.com/dominictarr/mpg123).
+
+Ubuntu/Debian
+```
+sudo apt-get install mpg123
+```
+Arch Linux
+```
+sudo pacman -Sy mpg123
+```
+OSX
+```
+brew install mpg123
+```
+
+Once you have, run the command below from terminal.
+
+```
+$ gem install pokedex-terminal
+```    
 #### Hardware requirements.
 
 This program should run on any terminal-enabled device built during or after the year that the Pokemon franchise was created.
@@ -93,6 +106,14 @@ When the user selects "List Pokemon" from the main menu, the list_menu method of
     This method uses a .each method to iterate through  each hash the @@pokemon_data object, if a hash's ':generation' value matches 'True', the .print_pokemon_condensed method of the Print class is called with that hash an input. This method prints only the ':name' value of that hash.
 
 ----
+
+## Project Management
+
+I used Trello create tasks and track my project completion. Here is a link to this [Trello](https://trello.com/b/Z1ggJcxD/pokemon-terminal).
+
+## Control Flow Diagram
+
+![Diagram](docs/Control_Flow_Pokedex.png)
 
 ## Development
 
