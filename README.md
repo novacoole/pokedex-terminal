@@ -140,3 +140,6 @@ The gem is available as open source under the terms of the [GPL-3.0 License](htt
 Everyone interacting in the pokedex-terminal project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/pokedex-terminal/blob/master/CODE_OF_CONDUCT.md).
 
 ---
+
+## Presentation
+https://prezi.com/p/k3grpagpvepd/
