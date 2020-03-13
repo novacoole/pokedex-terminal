@@ -8,6 +8,7 @@ require_relative './Delete'
 require 'tty-prompt'
 require 'smarter_csv'
 
+
 class Main_menu
   # Creates an array of hashes from the CSV file with keys taken from CSV headers.
   @@pokemon_data = SmarterCSV.process(File.dirname(__FILE__) + '/pokemon.csv')
