@@ -11,7 +11,7 @@ require 'smarter_csv'
 
 class Main_menu
   # Creates an array of hashes from the CSV file with keys taken from CSV headers.
-  @@pokemon_data = SmarterCSV.process('classes/pokemon.csv')
+  @@pokemon_data = SmarterCSV.process(File.expand_path("../pokemon.csv", __FILE__))
 
   def self.run
     loop do
@@ -83,9 +83,10 @@ class Main_menu
   end
 
   def self.exit_menu
-    save_changes = main_menu_prompt.ask('Are you sure you want to save your changes?')
+    exit_menu_prompt = TTY::Prompt.new(active_color: :red)
+    save_changes = exit_menu_prompt.ask('Are you sure you want to save your changes?')
     if save_changes == true
-      CSV.open('classes/pokemon.csv', 'wb') do |csv|
+      CSV.open(File.expand_path("../pokemon.csv", __FILE__), 'wb') do |csv|
         keys = @@pokemon_data.first.keys
         csv << keys
         @@pokemon_data.each do |hash|
