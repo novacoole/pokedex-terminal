@@ -20,15 +20,9 @@ Gem::Specification.new do |spec|
   end
   spec.executables   = ['pokedex-terminal']
   spec.require_paths = ['lib']
-
   spec.add_runtime_dependency 'artii', '~> 2.1', '>= 2.1.2'
-
   spec.add_runtime_dependency 'colorize', '~> 0.8.1'
-
   spec.add_runtime_dependency 'lolcat', '~> 100.0', '>= 100.0.1'
-
   spec.add_runtime_dependency 'smarter_csv', '~> 1.1', '>= 1.1.4'
-
   spec.add_runtime_dependency 'tty-prompt', '~> 0.21.0'
-
 end

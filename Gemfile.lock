@@ -1,7 +1,12 @@
 PATH
   remote: .
   specs:
-    pokedex-terminal (0.2.7)
+    pokedex-terminal (0.2.8)
+      artii (~> 2.1, >= 2.1.2)
+      colorize (~> 0.8.1)
+      lolcat (~> 100.0, >= 100.0.1)
+      smarter_csv (~> 1.1, >= 1.1.4)
+      tty-prompt (~> 0.21.0)
 
 GEM
   remote: https://rubygems.org/
@@ -53,14 +58,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  artii (~> 2.1, >= 2.1.2)
-  colorize (~> 0.8.1)
-  lolcat (~> 100.0, >= 100.0.1)
   pokedex-terminal!
   rake (~> 12.0)
   rspec (~> 3.0)
-  smarter_csv (~> 1.1, >= 1.1.4)
-  tty-prompt (~> 0.21.0)
 
 BUNDLED WITH
    2.1.4
