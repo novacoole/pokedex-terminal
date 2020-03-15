@@ -32,4 +32,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'lolcat', '~> 100.0', '>= 100.0.1'
   spec.add_development_dependency 'smarter_csv', '~> 1.1', '>= 1.1.4'
   spec.add_development_dependency 'tty-prompt', '~> 0.21.0'
+  spec.add_development_dependency 'colorize', '~> 0.8.1'
 end
