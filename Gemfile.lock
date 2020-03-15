@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    pokedex-terminal (0.2.5)
+    pokedex-terminal (0.2.6)
 
 GEM
   remote: https://rubygems.org/
